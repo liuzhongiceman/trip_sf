@@ -1,17 +1,19 @@
-.jumbotron {
-  background-image: url(../../assets/sf.png);
-  height: 160px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:  100% auto;
-  color: white;
-}
 
+@media only screen and (max-width: 960px){
+    .jumbotron{
+      display: none;
+    }
+}
 
 @media only screen and (min-width: 960px) {
         /* styles for browsers larger than 960px; */
         .jumbotron{
             height: 560px;
+            background-image: url(../../assets/sf.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:  100% auto;
+            color: white;
         }    
 
         .title{
