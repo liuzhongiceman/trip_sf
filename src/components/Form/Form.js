@@ -27,7 +27,7 @@ class Form extends Component{
                 <form className="form-div">
                     <div className="row">
                         <p className="itinerary">Itinerary Planner</p>
-                        <div class="form-group col-md-12">
+                        <div className="form-group col-md-12">
                             <input type="text" className="form-control" id="inputDestination" placeholder="Enter Destination" />
                         </div>
                     </div>
@@ -47,10 +47,10 @@ class Form extends Component{
 
                     <div className="row align-items-center">
                         <div className="form-group btn-recommend">
-                            <button class="large red button">Recommend</button>
+                            <button className="large red button">Recommend</button>
                         </div>
-                        <div class="form-group">
-                            <button class="large red button">Create My Own</button>
+                        <div className="form-group">
+                            <button className="large red button">Create My Own</button>
                         </div>
                     </div>
                 </form>

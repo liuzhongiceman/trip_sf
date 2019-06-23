@@ -9,7 +9,7 @@
         /* styles for browsers larger than 960px; */
         .jumbotron{
             height: 560px;
-            background-image: url(../../assets/sf.png);
+            background-image: url(../../assets/JumbotronImage/sf.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size:  100% auto;
