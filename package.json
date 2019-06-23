@@ -7,6 +7,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@wojtekmaj/react-daterange-picker": "^2.2.0",
+    "antd": "^3.19.7",
     "bootstrap": "^4.3.1",
     "bootstrap-daterangepicker": "^3.0.5",
     "jquery": "^3.4.1",
