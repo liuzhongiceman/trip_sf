@@ -39,26 +39,25 @@ class Footer extends Component {
                             <p className="team">Meet Our Team</p>
                             <div className="row">
                                 <ul className="team1">
-                                    <li><img className="huamn-icon" src={Human1} alt=""/>Hui xiang</li>
-                                    <li><img className="huamn-icon" src={Human2} alt=""/>Xin yi</li>
-                                    <li><img className="huamn-icon" src={Human3} alt=""/>Yi shi</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human1} alt=""/>Hui xiang</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human2} alt=""/>Xin yi</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human3} alt=""/>Yi shi</li>
                                 </ul>
                             </div>
                             <div className="row">
                                 <ul className="team2">
-                                    <li><img className="huamn-icon" src={Human4} alt=""/>Zhi yu</li>
-                                    <li><img className="huamn-icon" src={Human5} alt=""/>Zhong liu</li>
-                                    <li><img className="huamn-icon" src={Human6} alt=""/>Kyle</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human4} alt=""/>Zhi yu</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human5} alt=""/>Zhong liu</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human6} alt=""/>Kyle</li>
                                 </ul>
                           </div>
                             <div className="row">
                                 <ul className="team3">
-                                    <li><img className="huamn-icon" src={Human7} alt=""/>Chao Duan</li>
-                                    <li><img className="huamn-icon" src={Human8} alt=""/>Meng di</li>
-                                    <li><img className="huamn-icon" src={Human9} alt=""/>Jacky</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human7} alt=""/>Chao Duan</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human8} alt=""/>Meng di</li>
+                                    <li><img className="huamn-icon" id="name-group" src={Human9} alt=""/>Jacky</li>
                                 </ul>
                             </div>
-                     
                     </div>
                 </div>
                 <div className="col-sm-4">
