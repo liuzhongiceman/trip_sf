@@ -1,0 +1,32 @@
+
+.cancelBtn{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.cancelBtnRow{
+    margin-top: 20px;
+}
+#home,
+#aboutUs,
+#contact,
+#signIn,
+#signUp{
+    font-size: 1.2rem;
+}
+
+#signIn:active,
+#signIn:focus,
+#signIn:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+#signUp:active,
+#signUp:focus,
+#signUp:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}

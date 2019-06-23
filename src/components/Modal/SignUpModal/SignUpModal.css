@@ -1,8 +1,18 @@
+
+.cancelBtn{
+    width: 95%;
+    margin: 0 auto;
+    height: 45px;
+}
+
+.cancelBtnRow{
+    margin-top: 20px;
+}
+
 .register-form{
-        margin: 120px auto;
+        margin: 80px 30px;
         padding: 25px 20px;
         background: white;
-        box-shadow: 2px 2px 4px #c2c1c5;
         border-radius: 5px;
         color: black;
       }

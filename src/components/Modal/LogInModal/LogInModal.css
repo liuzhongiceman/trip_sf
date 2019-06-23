@@ -1,25 +1,35 @@
-.bslf{
+
+.cancelBtn{
+    width: 95%;
+    margin: 0 auto;
+    height: 45px;
+}
+
+.cancelBtnRow{
+    margin-top: 20px;
+}
+
+.modalForm{
   	width: 390px;
 	margin: 120px auto;
 	padding: 25px 20px;
 	background:white;
-	box-shadow: 2px 2px 4px #c2c1c5;
 	border-radius: 5px;
 	color: black;
      }
-.bslf h2{
+.modalForm h2{
   	margin-top: 0px;
 	margin-bottom: 15px;
 	padding-bottom: 5px;
 	border-radius: 10px;
 	border: 1px solid #25055f;
      }
-.bslf a{color: #783ce2;}
-.bslf a:hover{
+.modalForm a{color: #783ce2;}
+.modalForm a:hover{
   	text-decoration: none;
     	color: #03A9F4;
      }
-.bslf .checkbox-inline{padding-top: 7px;}
+.modalForm .checkbox-inline{padding-top: 7px;}
 
 .btn-primary {
     color: #fff;
