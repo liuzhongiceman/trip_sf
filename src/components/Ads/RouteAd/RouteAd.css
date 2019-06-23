@@ -1,0 +1,14 @@
+.col-sm{
+    text-align: center
+}
+
+#arrow{
+   margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+}
