@@ -22,8 +22,8 @@ class LogInModal extends Component {
                             <button type="submit" className="btn btn-primary pull-right">Log in</button>
                         </div>
                         <div className="clearfix">
-                            <Link href="#" className="pull-left">Forgot Password?</Link>
-                            <Link href="#" className="pull-right">Create an Account</Link>
+                            <Link href="#" className="pull-left" to="/">Forgot Password?</Link>
+                            <Link href="#" className="pull-right" to="/">Create an Account</Link>
                         </div>
                         <div className="row cancelBtnRow">
                             <Button className="cancelBtn" color="danger" onClick={this.props.handleLogInModal}>Cancel</Button>

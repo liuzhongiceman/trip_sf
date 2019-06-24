@@ -82,17 +82,17 @@ ul li{
 }
 
 
-@media only screen and (max-width:660px){
+@media only screen and (max-width:560px){
 .address{
-     margin-top: -40px;
+     margin-top: 0px;
 
 }
 .followSocial{
-    margin-top: -180px;
+    margin-top: -30px;
 }
 
 .team{
-    margin-top: -150px;
+    margin-top: -20px;
 
 }
 }

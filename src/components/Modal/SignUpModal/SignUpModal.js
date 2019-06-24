@@ -37,7 +37,7 @@ class SignUpModal extends Component {
                                 </div>
                                 <div className="form-group">
                                     <label className="checkbox-inline">
-                                        <input type="checkbox" required="required" /> You agree to the <Link href="#">Terms</Link> <Link href="#">Conditions</Link>.
+                                        <input type="checkbox" required="required" /> You agree to the <Link href="#" to="\">Terms</Link> <Link href="#" to="\">Conditions</Link>.
                         </label>
                                 </div>
                                 <div className="row">
@@ -48,7 +48,7 @@ class SignUpModal extends Component {
                                     </div>
                                     <div className="col-md-6 col-xs-12">
                                         <div className="form-group">
-                                            <Link href="#" className="btn btn-success btn-block btn-lg">Sign In</Link>
+                                            <Link href="#" className="btn btn-success btn-block btn-lg" to="\">Sign In</Link>
                                         </div>
                                     </div>
                                 </div>
