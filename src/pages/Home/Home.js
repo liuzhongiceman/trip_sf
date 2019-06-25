@@ -43,6 +43,7 @@ class Home extends Component{
                     <Tutorial/>
                     <RouteAd/>
                 </div>
+                
                 <Footer/>
             </div>
         )
