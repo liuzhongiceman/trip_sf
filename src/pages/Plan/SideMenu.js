@@ -2,6 +2,10 @@ import React,{Component} from 'react';
 import 'antd/dist/antd.css';
 import './SideMenu.css';
 import { Drawer, Layout, Menu, Icon} from 'antd';
+import { Explore } from './Explore';
+import {Map } from './Map';
+import { Timeline } from './Timeline';
+import { Calendar } from './Calendar';
 
 class SideMenu extends Component{
     constructor(props) {
@@ -9,9 +13,18 @@ class SideMenu extends Component{
         this.state = {
             collapsed: false,
             visible: false,
+            selectedKeys: 1,
+            planTitle: 'Plan Title Goes here',
         }
         
     }
+
+    onSelect = (info) => {
+        console.log('selected ', info);
+        this.setState({
+            selectedKeys: info.selectedKeys,
+        });
+    };
 
     toggle = () => {
         this.setState({
@@ -36,8 +49,24 @@ class SideMenu extends Component{
         });
     };
 
+    getContent = () => {
+        if(this.state.selectedKeys == 1){
+            return <Explore />
+        }
+        else if(this.state.selectedKeys == 2){
+            return <Timeline />
+        }else if(this.state.selectedKeys == 3){
+            return <Calendar />
+        }
+    }
+
+    getPlanTitle = () => {
+        return <span className="plan-title">{this.state.planTitle}</span>
+        
+    }
     render(){
         const { Header, Sider, Content } = Layout;
+        const selectedKeys = this.state.selectedKeys;
 
         return(
             <div style={{marginTop: '6%', height: '923px'}}>
@@ -56,7 +85,7 @@ class SideMenu extends Component{
                 <Layout style={{height: '-webkit-fill-available'}}>
                     <Sider trigger={null} collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
                     <div className="logo" />
-                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onSelect={this.onSelect}>
                         <Menu.Item key="1">
                         <Icon type="search" />
                         <span>Explore</span>
@@ -82,7 +111,7 @@ class SideMenu extends Component{
                         type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                         onClick={this.toggle}
                         />
-                        <span className="plan-title">Plan Title Goes Here</span>
+                        {this.getPlanTitle()}
                     </Header>
                     <Content
                         style={{
@@ -91,17 +120,10 @@ class SideMenu extends Component{
                         background: '#fff',
                         minHeight: 280,
                         }}
-                    >
-                        Content
+                    >   
+                        {this.getContent()}
+                        <Map />
                     </Content>
-                    {/* <p style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        background: '#fff',
-                        minHeight: 280,
-                        }}>
-                        Content
-                    </p> */}
                     </Layout>
                 </Layout>
             </div>

@@ -7,7 +7,6 @@ class Plan extends Component{
         super(props);
         this.state = {
             collapsed: false,
-
         }
         
     }
