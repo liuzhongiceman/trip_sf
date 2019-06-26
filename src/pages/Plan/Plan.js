@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import SideMenu from './SideMenu';
 
@@ -8,6 +7,7 @@ class Plan extends Component{
         super(props);
         this.state = {
             collapsed: false,
+
         }
         
     }
