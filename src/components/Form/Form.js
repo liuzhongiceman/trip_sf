@@ -57,10 +57,10 @@ class Form extends Component{
 
                     <div className="row align-items-center">
                         <div className="form-group btn-recommend">
-                            <button className="large red button" onClick={this.handleRecommend}>Recommend</button>
+                            <button className="large red button" onClick={this.handleRecommend} type="button">Recommend</button>
                         </div>
                         <div className="form-group">
-                            <button className="large red button" onClick={this.handleCreate}>Create My Own</button>
+                            <button className="large red button" onClick={this.handleCreate} type="button">Create My Own</button>
                         </div>
                     </div>
                 </form>

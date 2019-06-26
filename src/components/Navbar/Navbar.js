@@ -4,51 +4,28 @@ import Logo from '../../assets/logo.png';
 import './Navbar.css';
 import LogInModal from '../Modal/LogInModal/LogInModal';
 import SignUpModal from '../Modal/SignUpModal/SignUpModal';
-import { Icon } from 'antd';
 
 
 class Navbar extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: false,
             logInModalOpen: false,
             signUpModalOpen: false,
-
             isSignUpModalOpen: this.props.isSignUpModalOpen,
             isLogInModalOpen: this.props.isLogInModalOpen,
-
-            name: '',
-            team: '',
-            country: ''
         };
         this.handleSignUpModalOpen = this.handleSignUpModalOpen.bind(this);
         this.handleSignUpModal = this.handleSignUpModal.bind(this);
         this.handleLogInModal = this.handleLogInModal.bind(this);
-
     }
 
-    //callback function 1
-    // handleLogin = (token) => {
-    //     this.setState({ isLoggedIn: true });
-    //     localStorage.setItem(TOKEN_KEY, token);
-    // }
     handleLogin = () => {
-        this.setState({ isLoggedIn: true });
+        this.props.handleLogin();
     }
 
-    //callback function 2
     handleLogout = () => {
-        this.setState({ isLoggedIn: false });
-        // const token = localStorage.getItem(TOKEN_KEY);
-        // // Fire API call
-        // fetch(`${API_ROOT}/logout`, {
-        //     method: "GET",
-        //     headers: {
-        //         Authorization: `${AUTH_HEADER} ${token}`
-        //     }
-        // })
-        // localStorage.removeItem(TOKEN_KEY);
+        this.props.handleLogout();
     }
 
     handleSignUpModalOpen(){
@@ -100,14 +77,13 @@ class Navbar extends Component{
                                 <Link className="nav-link" id="plan" to="/plan">Plan</Link>
                             </li>
                         </ul>
-                        {   this.state.isLoggedIn ? 
+                        {   this.props.isLoggedIn ? 
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item active">
-                                        <button className="btn bg-transparent">My Trips</button>
+                                        <Link className="nav-link" id="mytrips" to="/mytrips">My Trips</Link>
                                     </li>
                                     <li className="nav-item active">
-                                        <button className="btn bg-transparent">Logout</button>
-                                        <Icon type="logout" onClick={this.handleLogout} />
+                                        <button className="btn bg-transparent" onClick={this.handleLogout} >Logout</button> 
                                     </li>
                                 </ul> 
                             :

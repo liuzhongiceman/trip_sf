@@ -15,7 +15,6 @@ class Plan extends Component{
     render(){
         return(
             <div>
-                <Navbar />
                 <SideMenu />
                 <Footer />
             </div>
