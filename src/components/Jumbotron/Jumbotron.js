@@ -7,7 +7,7 @@ class Jumbotron extends Component{
     render(){
         return(
             <div className="jumbotron jumbotron-fluid">
-                <Form/>
+                <Form />
             </div>
         )
     }

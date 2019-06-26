@@ -23,45 +23,33 @@ class Footer extends Component {
     render() {
         return (
             <section className="footer">
-                <div className="row">
-                    <div className="col-sm-4">
-                        <div className="sm-3">
-                            <div className="address">
-                                <p>E-mail: trip-advisor@gmail.com</p>
-                                <p>Tel: 9096880999</p>
-                                <p>6024 Silver Creek Valley Rd, San Jose, CA 95138</p>
-
-                            </div>
-                        </div>
+                <div className="container-fluid padding">
+                  <div className="row text-center">
+                    <div className="col-md-4">
+                        <h3>Contact</h3>
+                        <p>E-mail: trip-advisor@gmail.com</p>
+                        <p>Tel: 9096880999</p>
+                        <p>6024 Silver Creek Valley Rd, San Jose, CA 95138</p>
                     </div>
-                    <div className="col-sm-4">
-                        <div className="sm-3">
-                            <p className="team">Meet Our Team</p>
-                            <div className="row">
-                                <ul className="team1">
-                                    <li><img className="huamn-icon" id="name-group" src={Human1} alt=""/>Hui xiang</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human2} alt=""/>Xin yi</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human3} alt=""/>Yi shi</li>
-                                </ul>
-                            </div>
-                            <div className="row">
-                                <ul className="team2">
-                                    <li><img className="huamn-icon" id="name-group" src={Human4} alt=""/>Zhi yu</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human5} alt=""/>Zhong liu</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human6} alt=""/>Kyle</li>
-                                </ul>
-                          </div>
-                            <div className="row">
-                                <ul className="team3">
-                                    <li><img className="huamn-icon" id="name-group" src={Human7} alt=""/>Chao Duan</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human8} alt=""/>Meng di</li>
-                                    <li><img className="huamn-icon" id="name-group" src={Human9} alt=""/>Jacky</li>
-                                </ul>
-                            </div>
-                    </div>
+                    <div className="col-md-4">
+                        <p className="team">Meet Our Team</p>
+                            <ul className="team1">
+                                <li><img className="huamn-icon" id="name-group" src={Human1} alt=""/>Hui xiang</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human2} alt=""/>Xin yi</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human3} alt="" />Yi shi</li>                               
+                            </ul>
+                            <ul className="team2">
+                                <li><img className="huamn-icon" id="name-group" src={Human4} alt=""/>Zhi yu</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human5} alt=""/>Zhong liu</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human6} alt=""/>Kyle</li>
+                            </ul>
+                            <ul className="team3">
+                                <li><img className="huamn-icon" id="name-group" src={Human7} alt=""/>Chao Duan</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human8} alt=""/>Meng di</li>
+                                <li><img className="huamn-icon" id="name-group" src={Human9} alt=""/>Jacky</li>
+                            </ul>
                 </div>
-                <div className="col-sm-4">
-                    <div className="sm-3">
+                <div className="col-md-4">
                         <p className="followSocial">Follow Us On Social Media</p>
                         <ul className="social1">
                                 <li><img className="company-icon" src={Facebook} alt=""/></li>
@@ -75,10 +63,11 @@ class Footer extends Component {
                                 <li><img className="company-icon" src={Instgram} alt=""/></li>
                                 <li><img className="company-icon" src={Whatsapp} alt=""/></li>
                         </ul>
-                </div>
                </div>
               </div>
+              </div>
              </section>
+
         );
     }
 }
