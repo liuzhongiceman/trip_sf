@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import 'react-dates/initialize';
@@ -10,8 +10,8 @@ import './Form.css';
 import { DateRangePicker } from 'react-dates';
 
 
-class Form extends Component{
-    
+class Form extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,8 +21,8 @@ class Form extends Component{
         };
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="form-container">
                 <form className="form-div">
                     <div className="row">
@@ -55,7 +55,7 @@ class Form extends Component{
                     </div>
                 </form>
             </div>
-            
+
 
         )
     }
