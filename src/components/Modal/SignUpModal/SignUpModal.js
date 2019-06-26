@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Modal } from 'reactstrap';
+import { Modal } from 'reactstrap';
 import './SignUpModal.css';
 
 class SignUpModal extends Component {
