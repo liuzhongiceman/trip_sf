@@ -57,6 +57,8 @@ class SideMenu extends Component{
             return <Timeline />
         }else if(this.state.selectedKeys == 3){
             return <Calendar />
+        }else{
+            return <Explore />
         }
     }
 
