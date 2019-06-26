@@ -4,30 +4,66 @@ import { Button, Modal } from 'reactstrap';
 import './LogInModal.css';
 
 class LogInModal extends Component {
+
+    // Fire API to Login
+    handleSubmit = () => {
+        console.log("you have clicked on Login")
+        this.props.handleLogin();
+        // e.preventDefault();
+        // this.props.form.validateFields((err, values) => {
+        //   if (!err) {
+        //     console.log('Received values of form: ', values);
+        //     fetch(`${API_ROOT}/login`, {
+        //       method: 'POST',
+        //       body: JSON.stringify({
+        //           username: values.username,
+        //           password: values.password,
+        //       }),
+        //     })
+        //       .then((response) => {
+        //           if (response.ok) {
+        //               return response.text()
+        //           }
+        //           throw new Error(response.statusText)
+        //       })
+        //       .then ((response) => { 
+        //           message.success("Login Success!")
+        //           console.log(response)
+        //           const token = JSON.parse(response)["access_token"];
+        //           this.props.handleLogin(token);
+        //       })
+        //       .catch((err) => { 
+        //           message.error("Login Failed")
+        //           console.log(err)
+        //       })
+        //   }
+        // });
+      }
+
     render() {
         return (
             <Modal isOpen={this.props.isLogInModalOpen} toggle={this.props.handleLogInModal} size="lg"
                 style={{ maxWidth: '500px', width: '70%' }}>
-                <div class="modalForm">
-                    <form action="" method="post">
-                        <h2 class="text-center">Please login</h2>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" required="required" />
+                <div className="modalForm">
+                    <form action="" method="post" >
+                        <h2 className="text-center">Please login</h2>
+                        <div className="form-group">
+                            <input type="text" className="form-control" placeholder="Username" required="required" />
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required="required" />
+                        <div className="form-group">
+                            <input type="password" className="form-control" placeholder="Password" required="required" />
                         </div>
-                        <div class="form-group clearfix">
-                            <label class="checkbox-inline pull-left"><input type="checkbox" /> Remember me</label>
-                            <button type="submit" class="btn btn-primary pull-right">Log in</button>
+                        <div className="form-group clearfix">
+                            <label className="checkbox-inline pull-left"><input type="checkbox" /> Remember me</label>
+                            <button type="submit" className="btn btn-primary pull-right" onClick={this.handleSubmit}>Log in</button>
                         </div>
-                        <div class="clearfix">
-                            <Link href="#" class="pull-left">Forgot Password?</Link>
-                            <Link href="#" class="pull-right">Create an Account</Link>
-                        </div>
-                        <div className="row cancelBtnRow">
-                            <Button className="cancelBtn" color="danger" onClick={this.props.handleLogInModal}>Cancel</Button>
-                        </div>
+                        {/* <div className="clearfix">
+                            <Link href="#" className="pull-left">Forgot Password?</Link>
+                            <Link href="#" className="pull-right">Create an Account</Link>
+                        </div> */}
+                        {/* <div classNameName="row cancelBtnRow">
+                            <Button classNameName="cancelBtn" color="danger" onClick={this.props.handleLogInModal}>Cancel</Button>
+                        </div> */}
                     </form>
                 </div>
             </Modal>

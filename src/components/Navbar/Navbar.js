@@ -10,17 +10,32 @@ class Navbar extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            logInModalOpen: false,
+            signUpModalOpen: false,
             isSignUpModalOpen: this.props.isSignUpModalOpen,
             isLogInModalOpen: this.props.isLogInModalOpen,
-
-            name: '',
-            team: '',
-            country: ''
         };
-
+        this.handleSignUpModalOpen = this.handleSignUpModalOpen.bind(this);
         this.handleSignUpModal = this.handleSignUpModal.bind(this);
         this.handleLogInModal = this.handleLogInModal.bind(this);
+    }
 
+    handleLogin = () => {
+        this.props.handleLogin();
+    }
+
+    handleLogout = () => {
+        this.props.handleLogout();
+    }
+
+    handleSignUpModalOpen(){
+        console.log('clicked')
+        console.log('signUpModalOpen', this.state.signUpModalOpen)
+        this.setState(prevState=>{
+            return{
+                signUpModalOpen: !prevState.signUpModalOpen
+            }
+        })
     }
 
     handleSignUpModal() {
@@ -62,18 +77,28 @@ class Navbar extends Component{
                                 <Link className="nav-link" id="plan" to="/plan">Plan</Link>
                             </li>
                         </ul>
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
-                                <button className="btn bg-transparent" id="signIn" onClick={this.handleLogInModal}>Sign In</button>
-                            </li>
-                            <li className="nav-item active">
-                                <button className="btn bg-transparent" id="signUp" onClick={this.handleSignUpModal}>Sign Up</button>
-                            </li>
-                        </ul>
-
+                        {   this.props.isLoggedIn ? 
+                                <ul className="navbar-nav ml-auto">
+                                    <li className="nav-item active">
+                                        <Link className="nav-link" id="mytrips" to="/mytrips">My Trips</Link>
+                                    </li>
+                                    <li className="nav-item active">
+                                        <button className="btn bg-transparent" onClick={this.handleLogout} >Logout</button> 
+                                    </li>
+                                </ul> 
+                            :
+                                <ul className="navbar-nav ml-auto">
+                                    <li className="nav-item active">
+                                        <button className="btn bg-transparent" id="signIn" onClick={this.handleLogInModal}>Sign In</button>
+                                    </li>
+                                    <li className="nav-item active">
+                                        <button className="btn bg-transparent" id="signUp" onClick={this.handleSignUpModal}>Sign Up</button>
+                                    </li>
+                                </ul>
+                        }
                     </div>
                 </div>
-                <LogInModal isLogInModalOpen={this.state.isLogInModalOpen} handleLogInModal={this.handleLogInModal}/>
+                <LogInModal isLogInModalOpen={this.state.isLogInModalOpen} handleLogInModal={this.handleLogInModal} handleLogin={this.handleLogin}/>
                 <SignUpModal isSignUpModalOpen={this.state.isSignUpModalOpen} handleSignUpModal={this.handleSignUpModal}/>
             </nav>
         )
