@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-export class Explore extends React.Component{
+export class Explore extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -11,8 +11,10 @@ export class Explore extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="plan-left-content">
                 <h3>I am Explore</h3>
+                <div>items:</div>
+                { this.props.items.map(item=> { return <div key={item.id}>{item.name}</div>}) }
             </div>
         )
     }
