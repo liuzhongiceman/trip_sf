@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Footer from '../../components/Footer/Footer';
-import { clientID, clientSecret} from '../../constants';
+import { clientID, clientSecret} from '../../secrets';
 import { Drawer, Layout, Menu, Icon} from 'antd';
 import { Explore } from './Explore';
 import { Map } from './Map';
