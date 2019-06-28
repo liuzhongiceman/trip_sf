@@ -47,13 +47,13 @@ class Form extends Component{
         //     if (response.ok) {
         //         return response.json();
         //     }
-        //     throw new Error("Fail to load create blank plan.");
+        //     throw new Error("Fail to load create Recommended plan.");
         // })
         // .then((data) => {
         //     this.setState({
         //         planData: data ? data : [],
         //     })
-        //     // console.log(this.state.currentOrders);
+        //     // console.log(this.state.planData);
         // })
         // .catch((e) => {
         //     this.setState({
@@ -90,7 +90,7 @@ class Form extends Component{
         //     this.setState({
         //         planData: data ? data : [],
         //     })
-        //     // console.log(this.state.currentOrders);
+        //     // console.log(this.state.planData);
         // })
         // .catch((e) => {
         //     this.setState({

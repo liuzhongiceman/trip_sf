@@ -13,8 +13,10 @@ export class Timeline extends React.Component{
         return(
             <div className="plan-left-content">
                 <h3>I am Timeline</h3>
-                <div>items:</div>
-                { this.props.items.map(item=> { return <div key={item.id}>{item.name}</div>}) }
+                <div>Venues:</div>
+                { this.props.venues.map(venue=> { return <div key={venue.id}>{venue.name}</div>}) }
+                {console.log("you reached timeline component")}
+                {console.log(this.props.venues)}
             </div>
         )
     }
