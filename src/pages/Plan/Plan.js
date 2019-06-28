@@ -12,11 +12,12 @@ class Plan extends Component{
         super(props);
         this.state = {
             collapsed: false,
-            items: [],
+            venues: [],
             destination: '',
             visible: false,
             selectedKeys: 1,
-            planTitle: 'Plan Title Goes here'
+            planTitle: 'Plan Title Goes here',
+            planData: []
         }
         
     }
@@ -29,15 +30,15 @@ class Plan extends Component{
         });
 
         var params = {
-            "ll": "37.7749,-122.4194",
-            "query": 'Blue Bottle'
+            "near": "San Francisco, CA",
+            "limit": "30",
+            "categoryId": "52e81612bcbc57f1066b7a21,4bf58dd8d48988d181941735",
         };
 
         foursquare.venues.getVenues(params)
             .then(res=> {
-            this.setState({ items: res.response.venues });
+            this.setState({ venues: res.response.venues });
         });
-        console.log(this.state.items)
     }
 
     onSelect = (info) => {
@@ -72,14 +73,17 @@ class Plan extends Component{
 
     getContent = () => {
         if(this.state.selectedKeys == 1){
-            return <Explore items={this.state.items} />
+            return <Explore venues={this.state.venues} />
         }
         else if(this.state.selectedKeys == 2){
-            return <Timeline items={this.state.items}/>
+            return <Timeline venues={this.state.venues}/>
         }else if(this.state.selectedKeys == 3){
-            return <Calendar items={this.state.items}/>
-        }else{
-            return <Explore items={this.state.items}/>
+            return <Calendar venues={this.state.venues}/>
+        }else if(this.state.selectedKeys == 4) {
+            return <Explore venues={this.state.venues}/>
+        }
+        else if(this.state.venues === []){
+            console.log("no venues received");
         }
     }
 
@@ -93,6 +97,7 @@ class Plan extends Component{
 
         return(
             <div style={{marginTop: '6%', height: '923px'}}>
+                {console.log(this.state.venues)}
                 {/* <SideMenu /> */}
                 <Drawer
                     title="Basic Drawer"
@@ -119,7 +124,7 @@ class Plan extends Component{
                         <span>Explore</span>
                         </Menu.Item>
                         <Menu.Item key="2">
-                        <Icon type="schedule" />
+                        <Icon type="align-left" />
                         <span>Timeline</span>
                         </Menu.Item>
                         <Menu.Item key="3">
