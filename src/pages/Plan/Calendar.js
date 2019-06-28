@@ -11,8 +11,10 @@ export class Calendar extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="plan-left-content">
                 <h3>I am Calendar</h3>
+                <div>items:</div>
+                { this.props.items.map(item=> { return <div key={item.id}>{item.name}</div>}) }
             </div>
         )
     }
