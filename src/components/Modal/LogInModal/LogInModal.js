@@ -56,13 +56,6 @@ class LogInModal extends Component {
                             <label className="checkbox-inline pull-left"><input type="checkbox" /> Remember me</label>
                             <button type="submit" className="btn btn-primary pull-right" onClick={this.handleSubmit}>Log in</button>
                         </div>
-                        {/* <div className="clearfix">
-                            <Link href="#" className="pull-left">Forgot Password?</Link>
-                            <Link href="#" className="pull-right">Create an Account</Link>
-                        </div> */}
-                        {/* <div classNameName="row cancelBtnRow">
-                            <Button classNameName="cancelBtn" color="danger" onClick={this.props.handleLogInModal}>Cancel</Button>
-                        </div> */}
                     </form>
                 </div>
             </Modal>

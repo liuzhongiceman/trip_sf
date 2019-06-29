@@ -73,11 +73,6 @@ class SignUpModal extends Component {
                                 <div className="form-group">
                                     <input type="password" name="confirm_password" className="form-control" placeholder="Confirm Password" required="required" />
                                 </div>
-                                {/* <div className="form-group">
-                                    <label className="checkbox-inline">
-                                        <input type="checkbox" required="required" /> You agree to the <Link href="#">Terms</Link> <Link href="#">Conditions</Link>.
-                                    </label>
-                                </div> */}
                                 <div className="row">
                                     <div className="col-md-6 col-xs-12">
                                         <div className="form-group">

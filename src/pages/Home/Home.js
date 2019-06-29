@@ -3,6 +3,7 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import Footer from '../../components/Footer/Footer';
 import Tutorial from '../../components/Tutorial/Tutorial';
 import RouteAd from '../../components/Ads/RouteAd/RouteAd';
+import './Home.css';
 
 
 class Home extends Component{
