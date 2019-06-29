@@ -6,8 +6,8 @@ import { DatePicker } from 'antd';
 import { TOKEN_KEY, AUTH_HEADER, API_ROOT } from '../../constants';
 
 
-class Form extends Component{
-    
+class Form extends Component {
+
     constructor(props) {
         super(props);
         this.state = {

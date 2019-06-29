@@ -1,10 +1,22 @@
-.form-container{
+@media only screen and (max-width: 560px){
+  .form-container{
+    height: 260px;
+     margin-top: 63px; 
+    /* margin-left: 56%; */ 
+    background-color: white;
+    margin-bottom: -32px;
+  }
+}
+
+@media only screen and (min-width: 560px){
+  .form-container{
     position: absolute;
     width: 400px;
     height: 260px;
     margin-top: 8%;
     margin-left: 56%;
     background-color: white
+}
 }
 
 .form-div{
