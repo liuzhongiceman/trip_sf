@@ -1,9 +1,47 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Modal } from 'reactstrap';
+import { Modal } from 'reactstrap';
 import './SignUpModal.css';
 
 class SignUpModal extends Component {
+
+    // Fire API to register
+    handleSubmit = (e) => {
+        console.log("you clicked on Register")
+        // e.preventDefault();
+        // this.props.form.validateFieldsAndScroll((err, values) => {
+        //   if (!err) {
+        //     console.log('Received values of form: ', values);
+        //     fetch(`${API_ROOT}/register`, {
+        //       method: 'POST',
+        //       body: JSON.stringify({
+        //           username: values.username,
+        //           password: values.password,
+        //           email: values.email,
+        //           first_name: values.firstname,
+        //           last_name: values.lastname
+        //       }),
+        //     })
+        //     .then((response) => {
+        //       if (response.ok) {
+        //         return response;
+        //       }
+        //       throw new Error(response.statusText);
+        //     })
+  
+        //     .then((response) => response.text())
+        //     .then ((response) => {
+        //       message.success("Registration Success!")
+        //       this.props.history.push("/login")
+        //       console.log(response)
+        //     })
+            
+        //     .catch ((err) => {
+        //       message.error("Registration Failed")
+        //       console.log(err)
+        //     })
+        //   }
+        // });
+      }
     render() {
         return (
             <Modal isOpen={this.props.isSignUpModalOpen} toggle={this.props.handleSignUpModal} size="lg"
@@ -35,25 +73,12 @@ class SignUpModal extends Component {
                                 <div className="form-group">
                                     <input type="password" name="confirm_password" className="form-control" placeholder="Confirm Password" required="required" />
                                 </div>
-                                <div className="form-group">
-                                    <label className="checkbox-inline">
-                                        <input type="checkbox" required="required" /> You agree to the <Link href="#" to="\">Terms</Link> <Link href="#" to="\">Conditions</Link>.
-                        </label>
-                                </div>
                                 <div className="row">
                                     <div className="col-md-6 col-xs-12">
                                         <div className="form-group">
-                                            <input type="submit" value="Register" className="btn btn-primary btn-block btn-lg" id="btnx" tabindex="7" />
+                                            <input type="submit" value="Register" className="btn btn-primary btn-block btn-lg" id="btnx" tabIndex="7" onClick={this.handleSubmit} />
                                         </div>
                                     </div>
-                                    <div className="col-md-6 col-xs-12">
-                                        <div className="form-group">
-                                            <Link href="#" className="btn btn-success btn-block btn-lg" to="\">Sign In</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <Button className="cancelBtn" color="danger" onClick={this.props.handleSignUpModal}>Cancel</Button>
                                 </div>
                             </form>
                         </div>
