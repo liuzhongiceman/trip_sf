@@ -39,3 +39,20 @@ code {
   float: left;
   width: 50%;
 }
+
+.venueAvatar {
+  width: 65px;
+  height: 55px;
+}
+
+.ant-cascader-picker {
+  float: left;
+  margin-top: 1%;
+}
+/* .ant-list-vertical .ant-list-item-meta-title{
+  display: flex
+}
+
+.ant-list-item-meta-description{
+  display: flex
+} */

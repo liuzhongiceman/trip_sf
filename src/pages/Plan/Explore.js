@@ -6,7 +6,8 @@ export class Explore extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            
+            description: '',
+            photoURL: '',
         }
         
     }
@@ -16,30 +17,17 @@ export class Explore extends Component{
         console.log("hey, I am about to map items", this.props.venues)
         this.props.venues.map(venue=> {
             listData.push({
-            href: 'http://ant.design',
-            // title: `ant design part ${i}`,
+            href: '',
             title: venue.name,
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            description: 
-                venue.location.formattedAddress
-              + ' description goes here.',
+            avatar: 'https://banner2.kisspng.com/20180913/scp/kisspng-clip-art-image-travel-avatar-kawaii-5b9a2ac61224a5.3540012315368301500743.jpg',
+            address: 
+                venue.location.formattedAddress,
             content:
-            // 'content goes here',
-            <VenueDetails venueId={venue.id} />,
+            // <VenueDetails venueId={venue.id} />
+            <p>Description: intro of this venue goes here</p>,
+            category: venue.categories[0].name,
             });
         })
-        // for (let i = 0; i < 23; i++) {
-        // listData.push({
-        //     href: 'http://ant.design',
-        //     // title: `ant design part ${i}`,
-        //     titie: this.props.items.name,
-        //     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        //     description:
-        //     'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-        //     content:
-        //     'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-        // });
-        // }
 
         const IconText = ({ type, text }) => (
         <span>
@@ -50,11 +38,8 @@ export class Explore extends Component{
 
         return(
             <div className="plan-left-content">
-                {/* <h3>I am Explore</h3>
-                <div>items:</div>
-                {this.props.items.map(item=> { return <div key={item.id}>{item.name}</div>})}
                 {console.log("you reached explore component")}
-                {console.log(this.props.items)} */}
+                {console.log(this.props.venues)}
                 <List
                     itemLayout="vertical"
                     size="large"
@@ -65,11 +50,6 @@ export class Explore extends Component{
                     pageSize: 3,
                     }}
                     dataSource={listData}
-                    // footer={
-                    // <div>
-                    //     <b>ant design</b> footer part
-                    // </div>
-                    // }
                     renderItem={item => (
                         <List.Item
                             key={item.title}
@@ -87,12 +67,13 @@ export class Explore extends Component{
                             }
                         >
                             <List.Item.Meta
-                            avatar={<Avatar src={item.avatar} />}
+                            avatar={<Avatar className = "venueAvatar" src={item.avatar} />}
                             // avatar={<Avatar icon="camera" theme="twoTone" />}
                             title={<a href={item.href}>{item.title}</a>}
-                            description={item.description}
+                            description={item.address}
                             />
-                            {item.content}
+                            <div>{item.content}</div>
+                            <div>Category: {item.category}</div>
                         </List.Item>
                     )}
                 />

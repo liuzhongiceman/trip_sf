@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom'
-import './Form.css';
 import Plan from '../../pages/Plan/Plan';
 import { DatePicker } from 'antd';
 import { TOKEN_KEY, AUTH_HEADER, API_ROOT } from '../../constants';
+
+import './Form.css'
 
 
 class Form extends Component {
@@ -22,7 +23,14 @@ class Form extends Component {
 
     renderRedirect = () => {
         if(this.state.redirect){
-            return <Redirect to='/plan' />
+            console.log("sendingDestinationFromForm" + this.state.destination)
+            return (<Plan 
+                        destination={this.state.destination} 
+                        startDate={this.state.startDate} 
+                        endDate={this.state.endDate}
+                    />,
+                    <Redirect to='/plan' />
+            )
         }
     }
 

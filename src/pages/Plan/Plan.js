@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Footer from '../../components/Footer/Footer';
 import { clientID, clientSecret} from '../../secrets';
-import { Drawer, Layout, Menu, Icon} from 'antd';
+import { Drawer, Layout, Menu, Icon, Cascader, Checkbox } from 'antd';
 import { Explore } from './Explore';
 import { Map } from './Map';
 import { Timeline } from './Timeline';
@@ -17,13 +17,15 @@ class Plan extends Component{
             visible: false,
             selectedKeys: 1,
             planTitle: 'Plan Title Goes here',
-            planData: []
+            planData: [],
+            placeholder: 'please select',
         }
         
     }
 
     componentDidMount() {
-        console.log("componentDidMount")
+        console.log("class Plan componentDidMount")
+        console.log("isDestinationEmpty:" + this.props.destination)
         var foursquare = require('react-foursquare')({
             clientID: clientID,
             clientSecret: clientSecret  
@@ -31,14 +33,47 @@ class Plan extends Component{
 
         var params = {
             "near": "San Francisco, CA",
-            "limit": "30",
+            // "near": this.props.destination,
+            "limit": "3",
             "categoryId": "52e81612bcbc57f1066b7a21,4bf58dd8d48988d181941735",
         };
-
+        
         foursquare.venues.getVenues(params)
-            .then(res=> {
+            .then(res=> {             
             this.setState({ venues: res.response.venues });
         });
+        console.log("made API call to fourSquare getVenues")
+
+        const populatePlan = [];
+        for(let i = 0; i < 10; i++){
+            populatePlan.push({
+                id: `${i}`,
+                title: `venueTitle ${i}`,
+                address: 'address',
+                category: 'category',
+                description: 'description',
+                rating: 'rating',
+                date: 'date',
+                startTime: 'startTime',
+                endTime: 'endTime',
+                like: [],
+            })
+        }
+        this.setState({ planData: populatePlan})
+        console.log("isPlanPopulated:" + populatePlan);
+    }
+    
+    // callback function to handle add venue to plan from class Explore
+    onClickAdd = () => {
+        this.setState({ })
+    }
+    // callback function to handle add a heart-ed venue to plan from class Explore
+    onClickLike = () => {
+        this.setState({ })
+    }
+    // callback function to handle deleting an added venue in a plan, from class Timeline
+    onClickDelete = () => {
+        this.setState({ })
     }
 
     onSelect = (info) => {
@@ -71,15 +106,15 @@ class Plan extends Component{
         });
     };
 
-    getContent = () => {
+    getContentLeft = () => {
         if(this.state.selectedKeys == 1){
             return <Explore venues={this.state.venues} />
         }
         else if(this.state.selectedKeys == 2){
-            return <Timeline venues={this.state.venues}/>
+            return <Timeline planData={this.state.planData}/>
         }else if(this.state.selectedKeys == 3){
-            return <Calendar venues={this.state.venues}/>
-        }else if(this.state.selectedKeys == 4) {
+            return <Calendar planData={this.state.planData}/>
+        }else if(this.state.selectedKeys == 4 || 5) {
             return <Explore venues={this.state.venues}/>
         }
         else if(this.state.venues === []){
@@ -92,12 +127,33 @@ class Plan extends Component{
         
     }
 
+    // onChange (value)  {
+    //     console.log(value)
+    // }
+
     render(){
         const { Header, Sider, Content } = Layout;
 
+        const listVenueIDs = [];
+        this.state.venues.map( venue => {
+            listVenueIDs.push({
+                id: venue.id,
+            })
+        })
+
+        // const options = [
+        //     { value: 'trending', label: <Checkbox onChange={this.onChange}>Trending</Checkbox> },
+        //     { value: 'outdoors', label: <Checkbox onChange={this.onChange}>Outdoors</Checkbox> },
+        //     { value: 'Museum', label: <Checkbox onChange={this.onChange}>Museum</Checkbox> },
+        //     { value: 'MusicVenue', label: <Checkbox onChange={this.onChange}>Music Venue</Checkbox> },
+        //     { value: 'NationalPark', label: <Checkbox onChange={this.onChange}>National Park</Checkbox> },
+        //     { value: 'Food', label: <Checkbox onChange={this.onChange}>Food</Checkbox> },
+        //     { value: 'ChineseRestaurant', label: <Checkbox onChange={this.onChange}>Chinese Restaurant</Checkbox> },
+        // ]
+        
         return(
             <div style={{marginTop: '6%', height: '923px'}}>
-                {console.log(this.state.venues)}
+                {console.log("venues: " + this.state.venues)}
                 {/* <SideMenu /> */}
                 <Drawer
                     title="Basic Drawer"
@@ -118,6 +174,10 @@ class Plan extends Component{
                         <Menu.Item key="4" onClick={this.showDrawer}>
                         <Icon type="edit" />
                         <span>Edit Trip</span>
+                        </Menu.Item>
+                        <Menu.Item key="5">
+                        <Icon type="setting" />
+                        <span>Filter</span>
                         </Menu.Item>
                         <Menu.Item key="1">
                         <Icon type="search" />
@@ -140,6 +200,7 @@ class Plan extends Component{
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
+                        {/* <Cascader options={options} onChange={this.onChange} placeholder={this.state.placeholder} /> */}
                         {this.getPlanTitle()}
                     </Header>
                     <Content
@@ -150,7 +211,7 @@ class Plan extends Component{
                         minHeight: 280,
                         }}
                     >   
-                        {this.getContent()}
+                        {this.getContentLeft()}
                         <Map />
                     </Content>
                     </Layout>

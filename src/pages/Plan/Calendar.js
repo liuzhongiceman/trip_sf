@@ -11,13 +11,22 @@ export class Calendar extends React.Component{
 
 
     render(){
+        {console.log("you reached calendar component")}
+        {console.log("is planData empty" + this.props.planData)}
+
         return(
             <div className="plan-left-content">
                 <h3>I am Calendar</h3>
-                <div>Venues:</div>
-                { this.props.venues.map(venue=> { return <div key={venue.id}>{venue.name}</div>}) }
-                {console.log("you reached calendar component")}
-                {console.log(this.props.items)}
+                { this.props.planData ?
+                    this.props.planData.map( venue => { 
+                        return (
+                                <div key={venue.id}>
+                                    {venue.title}
+                                    {venue.address}
+                                </div>
+                        )
+                    })  : "empty plandata"
+                }
             </div>
         )
     }
