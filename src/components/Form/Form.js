@@ -22,7 +22,14 @@ class Form extends Component{
 
     renderRedirect = () => {
         if(this.state.redirect){
-            return <Redirect to='/plan' />
+            console.log("sendingDestinationFromForm" + this.state.destination)
+            return (<Plan 
+                        destination={this.state.destination} 
+                        startDate={this.state.startDate} 
+                        endDate={this.state.endDate}
+                    />,
+                    <Redirect to='/plan' />
+            )
         }
     }
 

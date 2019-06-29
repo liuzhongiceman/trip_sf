@@ -10,13 +10,23 @@ export class Timeline extends React.Component{
     }
 
     render(){
+        {console.log("you reached timeline component")}
+        {console.log("is planData empty:" + this.props.planData)}
+
         return(
             <div className="plan-left-content">
                 <h3>I am Timeline</h3>
-                <div>Venues:</div>
-                { this.props.venues.map(venue=> { return <div key={venue.id}>{venue.name}</div>}) }
-                {console.log("you reached timeline component")}
-                {console.log(this.props.venues)}
+                { this.props.planData ?
+                    this.props.planData.map( venue => { 
+                        return (
+                                <div key={venue.id}>
+                                    {venue.title}
+                                    {venue.address}
+                                </div>
+                        )
+                    })  : "empty plandata"
+                }
+                
             </div>
         )
     }
