@@ -1,15 +1,50 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Modal } from 'reactstrap';
+import { Modal } from 'reactstrap';
 import './LogInModal.css';
 
 class LogInModal extends Component {
+
+    // Fire API to Login
+    handleSubmit = () => {
+        console.log("you have clicked on Login")
+        this.props.handleLogin();
+        // e.preventDefault();
+        // this.props.form.validateFields((err, values) => {
+        //   if (!err) {
+        //     console.log('Received values of form: ', values);
+        //     fetch(`${API_ROOT}/login`, {
+        //       method: 'POST',
+        //       body: JSON.stringify({
+        //           username: values.username,
+        //           password: values.password,
+        //       }),
+        //     })
+        //       .then((response) => {
+        //           if (response.ok) {
+        //               return response.text()
+        //           }
+        //           throw new Error(response.statusText)
+        //       })
+        //       .then ((response) => { 
+        //           message.success("Login Success!")
+        //           console.log(response)
+        //           const token = JSON.parse(response)["access_token"];
+        //           this.props.handleLogin(token);
+        //       })
+        //       .catch((err) => { 
+        //           message.error("Login Failed")
+        //           console.log(err)
+        //       })
+        //   }
+        // });
+      }
+
     render() {
         return (
             <Modal isOpen={this.props.isLogInModalOpen} toggle={this.props.handleLogInModal} size="lg"
                 style={{ maxWidth: '500px', width: '70%' }}>
                 <div className="modalForm">
-                    <form action="" method="post">
+                    <form action="" method="post" >
                         <h2 className="text-center">Please login</h2>
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Username" required="required" />
@@ -19,14 +54,7 @@ class LogInModal extends Component {
                         </div>
                         <div className="form-group clearfix">
                             <label className="checkbox-inline pull-left"><input type="checkbox" /> Remember me</label>
-                            <button type="submit" className="btn btn-primary pull-right">Log in</button>
-                        </div>
-                        <div className="clearfix">
-                            <Link href="#" className="pull-left" to="/">Forgot Password?</Link>
-                            <Link href="#" className="pull-right" to="/">Create an Account</Link>
-                        </div>
-                        <div className="row cancelBtnRow">
-                            <Button className="cancelBtn" color="danger" onClick={this.props.handleLogInModal}>Cancel</Button>
+                            <button type="submit" className="btn btn-primary pull-right" onClick={this.handleSubmit}>Log in</button>
                         </div>
                     </form>
                 </div>

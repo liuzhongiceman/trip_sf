@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import Footer from '../../components/Footer/Footer';
 
@@ -7,7 +6,6 @@ class About extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <Jumbotron/>
         <div className="container">
           <h2>About</h2>

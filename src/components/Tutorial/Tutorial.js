@@ -5,8 +5,8 @@ import './Tutorial.css';
 class Tutorial extends Component{
     render(){
         return(
-            <div className="container-fluid padding">
-                    <h2 className="complete-plan-title">Easy to Use, easy to browse</h2>
+            <div className="get-compelet-plan">
+                    <h2 className="complete-plan-title">Easy to Use, easy to browse (Tutorial)</h2>
             </div>
          
         
