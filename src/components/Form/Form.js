@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom'
-import './Form.css';
 import Plan from '../../pages/Plan/Plan';
 import { DatePicker } from 'antd';
 import { TOKEN_KEY, AUTH_HEADER, API_ROOT } from '../../constants';
+
+import './Form.css'
 
 
 class Form extends Component{
