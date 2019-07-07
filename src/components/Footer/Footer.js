@@ -22,11 +22,11 @@ import Youtube from '../../assets/FooterImage/media/youtube.png';
 class Footer extends Component {
     render() {
         return (
-            <section className="footer">
+            <footer className="footer">
                 <div className="container-fluid padding">
-                  <div className="row text-center">
+                  <div className="row footer-row">
                     <div className="col-md-4">
-                        <h3>Contact</h3>
+                        <p className="contact">Contact</p>
                         <p>E-mail: trip-advisor@gmail.com</p>
                         <p>Tel: 9096880999</p>
                         <p>6024 Silver Creek Valley Rd, San Jose, CA 95138</p>
@@ -66,7 +66,7 @@ class Footer extends Component {
                </div>
               </div>
               </div>
-             </section>
+             </footer>
 
         );
     }

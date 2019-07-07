@@ -2,10 +2,12 @@
 .footer{
   background-color: #3f3f3f;
   color: #d5d5dd;
-  padding-top: 2rem;
+  padding-top: -10px;
 }
 
-
+.footer-row{
+    padding-top: 30px;
+}
 ul li{
     display: inline;
 }
@@ -55,6 +57,10 @@ ul li{
 
 .personlist{
     padding-left: 5rem;
+}
+
+.footer{
+    padding-top: -100px;
 }
 
 }

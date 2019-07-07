@@ -76,12 +76,16 @@ class Navbar extends Component{
                             <li className="nav-item active">
                                 <Link className="nav-link" id="plan" to="/plan">Plan</Link>
                             </li>
+                            <li className="nav-item active">
+                                <Link className="nav-link" id="plan" to="/myPlans">MyPlans</Link>
+                            </li>
+                            
                         </ul>
                         {   this.props.isLoggedIn ? 
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item active">
-                                        <Link className="nav-link" id="mytrips" to="/mytrips">My Trips</Link>
-                                    </li>
+                                <li className="nav-item active">
+                                    <Link className="nav-link" id="plan" to="/myPlans">MyPlans</Link>
+                                </li>
                                     <li className="nav-item active">
                                         <button className="btn bg-transparent" onClick={this.handleLogout} >Logout</button> 
                                     </li>

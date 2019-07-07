@@ -7,6 +7,9 @@ import Contact from './pages/Contact/Contact';
 import Plan from './pages/Plan/Plan';
 import Navbar from './components/Navbar/Navbar';
 import MyTrips from './pages/MyTrips/MyTrips';
+import MyPlans from './pages/MyPlans/MyPlans';
+import PlanDetail from './pages/MyPlans/PlanDetail';
+
 
 
 class App extends Component{
@@ -55,6 +58,10 @@ class App extends Component{
           <Route path="/contact" component={Contact}/>
           <Route path="/plan" component={Plan}/>
           <Route path="/mytrips" component={MyTrips}/>
+          <Route path="/myplans" component={MyPlans} />
+          <Route path="/detail" component={PlanDetail} />
+
+
         </Router>
       </div>
     )
